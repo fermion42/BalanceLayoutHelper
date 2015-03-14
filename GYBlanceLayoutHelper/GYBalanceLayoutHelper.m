@@ -142,7 +142,6 @@
       actualSize = CGSizeMake(roundf(rowSize / summedRatios * (preferredSize.width / preferredSize.height)), roundf(rowSize / summedRatios));
       
       CGRect frame = CGRectMake(offset.x, offset.y, actualSize.width, actualSize.height);
-      // copy frame into frames ptr and increment ptr
       [self.itemFrames addObject:[NSValue valueWithCGRect:frame]];
       
       offset.x += actualSize.width + self.minimumInteritemSpacing;
@@ -150,12 +149,7 @@
       contentMaxValue = CGRectGetMaxY(frame);
     }
     
-    /**
-     * Check if row actually contains any items before changing offset,
-     * because linear partitioning algorithm might return a row with no items.
-     */
     if ([row count] > 0) {
-      // move offset to next line
       offset = CGPointMake(0, offset.y + previousItemSize + self.minimumLineSpacing);
     }
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E6E38CC7-06D8-4408-A3FF-EB48BBD45290</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BalanceViewDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D38C0F7D36ABBAB992BEED4E79520758EAE6479B</key>
+		<string>https://github.com/fermion42/BalanceLayoutHelper.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BalanceViewDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D38C0F7D36ABBAB992BEED4E79520758EAE6479B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/fermion42/BalanceLayoutHelper.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D38C0F7D36ABBAB992BEED4E79520758EAE6479B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D38C0F7D36ABBAB992BEED4E79520758EAE6479B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BalanceViewDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>
