@@ -23,21 +23,23 @@
   // Do any additional setup after loading the view, typically from a nib.
   [self.view addSubview:self.displayView];
   
-  [GYBalanceLayoutHelper layoutItems:[self.images copy] withPreferredRowHeight:120 callback: ^(NSArray *items, CGSize contentSize) {
-    NSLog(@"%@", [NSValue valueWithCGSize:contentSize]);
-    
-    self.displayView.frame = CGRectMake(0, 0, contentSize.width, contentSize.height);
-    self.displayView.center = self.view.center;
-    
-    for (NSUInteger index = 0; index < [items count]; index++) {
-      NSValue *rectValue = items[index];
-      CGRect itemRect = [rectValue CGRectValue];
-      
-      UIImageView *imageView = [[UIImageView alloc] initWithFrame:itemRect];
-      imageView.image = self.images[index];
-      [self.displayView addSubview:imageView];
-    }
-  }];
+  [GYBalanceLayoutHelper layoutItems:[self.images copy]
+              withPreferredRowHeight:120 andviewWidth:300
+                            callback: ^(NSArray *items, CGSize contentSize) {
+                              NSLog(@"%@", [NSValue valueWithCGSize:contentSize]);
+                              
+                              self.displayView.frame = CGRectMake(0, 0, contentSize.width, contentSize.height);
+                              self.displayView.center = self.view.center;
+                              
+                              for (NSUInteger index = 0; index < [items count]; index++) {
+                                NSValue *rectValue = items[index];
+                                CGRect itemRect = [rectValue CGRectValue];
+                                
+                                UIImageView *imageView = [[UIImageView alloc] initWithFrame:itemRect];
+                                imageView.image = self.images[index];
+                                [self.displayView addSubview:imageView];
+                              }
+                            }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

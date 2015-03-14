@@ -14,10 +14,13 @@
 
 @end
 
-typedef void (^BalanceLayoutHelperCallback)(NSArray *itemFrames, CGSize contentSize);
+typedef void (^GYBalanceLayoutHelperCallback)(NSArray *itemFrames, CGSize contentSize);
 
 @interface GYBalanceLayoutHelper : NSObject
 
-+ (void)layoutItems:(NSArray *)items withPreferredRowHeight:(CGFloat)height callback:(BalanceLayoutHelperCallback)block;
++ (void)       layoutItems:(NSArray *)items
+    withPreferredRowHeight:(CGFloat)height
+              andviewWidth:(CGFloat)width
+                  callback:(GYBalanceLayoutHelperCallback)block;
 
 @end

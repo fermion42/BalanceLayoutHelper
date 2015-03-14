@@ -19,6 +19,7 @@
 @property (nonatomic) CGFloat minimumInteritemSpacing;
 @property (nonatomic) UIEdgeInsets contentInset;
 @property (nonatomic) CGFloat preferredRowSize;
+@property (nonatomic) CGFloat viewPortWidth;
 
 @end
 
@@ -26,10 +27,14 @@
 
 #pragma mark Public
 
-+ (void)layoutItems:(NSArray *)items withPreferredRowHeight:(CGFloat)height callback:(BalanceLayoutHelperCallback)block {
++ (void)       layoutItems:(NSArray *)items
+    withPreferredRowHeight:(CGFloat)height
+              andviewWidth:(CGFloat)width
+                  callback:(GYBalanceLayoutHelperCallback)block {
   GYBalanceLayoutHelper *helper = [[GYBalanceLayoutHelper alloc] init];
   helper.items = items;
   helper.preferredRowSize = height;
+  helper.viewPortWidth = width;
   
   [helper perpareLayout];
   block([helper.itemFrames copy], helper.contentSize);
@@ -106,7 +111,11 @@
 }
 
 - (CGFloat)viewPortWidth {
-  return CGRectGetWidth([UIScreen mainScreen].bounds) - self.contentInset.left - self.contentInset.right;
+  if (!_viewPortWidth) {
+    _viewPortWidth =  CGRectGetWidth([UIScreen mainScreen].bounds) - self.contentInset.left - self.contentInset.right;
+  }
+  
+  return _viewPortWidth;
 }
 
 - (CGFloat)viewPortAvailableSize {
